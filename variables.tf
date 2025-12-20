@@ -20,3 +20,10 @@ variable "tags" {
     cluster   = "demo-eks-cluster"
   }
 }
+
+# IAM Role Variables
+variable "eks_role_name" {
+  type        = string
+  description = "Name of the EKS IAM Role"
+  default     = "tf-eks-role"
+}
