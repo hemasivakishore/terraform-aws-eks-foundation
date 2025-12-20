@@ -1,9 +1,9 @@
-resource "aws_route_table_association" "k8s-associations" {
+resource "aws_route_table_association" "eks-association" {
   count = 6
 
-  # Links to each of the 6 subnets created in subnets.tf 
+  # Maps to the 6 subnets: 0-3 are Public, 4-5 are Private 
   subnet_id = aws_subnet.no-module-k8s-subnet[count.index].id
 
-  # Logic: If index is 0,1,2,3 -> Public RT | If index is 4,5 -> Private RT
-  route_table_id = count.index < 4 ? aws_route_table.eks-public-rt.id : aws_route_table.eks-private-rt.id
+  # If index is < 4, use the "public" route table; otherwise use "private" [cite: 3]
+  route_table_id = count.index < 4 ? aws_route_table.eks-rt["public"].id : aws_route_table.eks-rt["private"].id
 }
