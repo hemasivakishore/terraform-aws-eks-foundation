@@ -8,8 +8,8 @@ resource "aws_eks_cluster" "eks-cluster" {
     subnet_ids = [
       aws_subnet.no-module-k8s-subnet[0].id,
       aws_subnet.no-module-k8s-subnet[1].id,
-      aws_subnet.no-module-k8s-subnet[4].id,
-      aws_subnet.no-module-k8s-subnet[5].id,
+      aws_subnet.no-module-k8s-subnet[2].id,
+      aws_subnet.no-module-k8s-subnet[3].id,
     ]
   }
   access_config {
