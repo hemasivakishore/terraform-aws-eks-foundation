@@ -24,3 +24,29 @@ variable "vpc-name" {
   description = "The name of the VPC"
   default     = "eks-tf-vpc"
 }
+
+
+# EKS Cluster Variables
+variable "cluster_name" {
+  type        = string
+  default     = "hsk-eks-cluster"
+  description = "EKS Cluster Name"
+}
+
+variable "k8s_version" {
+  type        = string
+  description = "Kubernetes Version for EKS Cluster"
+  default     = "1.32"
+}
+
+variable "eks_version" {
+  type        = string
+  description = "EKS Version"
+  default     = "1.32"
+}
+
+variable "admin_username" {
+  type        = string
+  description = "The admin username for the EKS cluster"
+  default     = "admin"
+}

@@ -1,6 +1,7 @@
+#vpc.tf
 module "eks-vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "6.5.1"
+  version = "~> 5.0"
 
   name = var.vpc-name
   cidr = var.cidr-block
