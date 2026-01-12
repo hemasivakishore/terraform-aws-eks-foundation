@@ -29,20 +29,20 @@ variable "vpc-name" {
 # EKS Cluster Variables
 variable "cluster_name" {
   type        = string
-  default     = "hsk-eks-cluster"
+  default     = "hsk-eks"
   description = "EKS Cluster Name"
 }
 
 variable "k8s_version" {
   type        = string
   description = "Kubernetes Version for EKS Cluster"
-  default     = "1.32"
+  default     = "1.31"
 }
 
 variable "eks_version" {
   type        = string
   description = "EKS Version"
-  default     = "1.32"
+  default     = "1.31"
 }
 
 variable "admin_username" {
